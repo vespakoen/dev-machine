@@ -1,0 +1,27 @@
+port_allow:
+  - 22
+  - 80
+
+system:
+  timezone: Europe/Amsterdam
+  locale: en_US.UTF-8
+
+projects:
+  ivizi:
+    path: /home/koen/Projects/azion/ivizi
+    git: git@bitbucket.com:ivizi/app.git
+  haarderluip:
+    path: /home/koen/Projects/azion/haarderluip
+    git: git@bitbucket.com:haarderluip/app.git
+  vrijthoftoernooi:
+    path: /home/koen/Projects/azion/vrijthoftoernooi
+    git: git@bitbucket.com:vrijthoftoernooi/app.git
+  tubesworld:
+    path: /home/koen/Projects/tubesworld
+    git: git@bitbucket.com:tubesworld/app.git
+  minifo:
+    path: /home/koen/Projects/minifo
+    git: git@bitbucket.com:minifo/app.git
+  welounge:
+    path: /home/koen/Projects/welounge
+    git: git@bitbucket.com:welounge/app.git
