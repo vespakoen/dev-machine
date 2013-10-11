@@ -1,6 +1,6 @@
 Vagrant.configure("2") do |config|
   ## Choose your base box
-  config.vm.box = "precise32"
+  config.vm.box = "precise64"
 
   ## For masterless, mount your file roots file root
   config.vm.synced_folder "roots/", "/srv/"
