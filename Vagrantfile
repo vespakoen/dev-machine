@@ -5,15 +5,15 @@ Vagrant.configure("2") do |config|
   ## For masterless, mount your file roots file root
   config.vm.synced_folder "roots/", "/srv/"
 
-  ## Forward 8080 to nginx
-  config.vm.network :forwarded_port, guest: 80, host: 8080
+  ## Forward 80 to nginx
+  config.vm.network :forwarded_port, guest: 80, host: 80
 
   ## Set your salt configs here
   config.vm.provision :salt do |salt|
     ## Minion config is set to ``file_client: local`` for masterless
     salt.minion_config = "minion"
 
-    ## Installs our example formula in "roots/salt"
+    ## Installs formulas as configured in "roots/salt/top.sls"
     salt.run_highstate = true
   end
 
@@ -21,7 +21,8 @@ Vagrant.configure("2") do |config|
     vb.gui = true
     vb.customize [
       "modifyvm", :id,
-      "--name", "dev-machine"
+      "--name", "dev-machine",
+      "--memory", 512
     ]
   end
 end

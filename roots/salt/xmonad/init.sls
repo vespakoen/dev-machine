@@ -1,11 +1,6 @@
 xmonad:
   pkg.installed:
     - pkgs:
-      - lightdm
-      - xinit
-      - ubuntu-desktop
-      - gnome-shell
-      - gnome-terminal
       - xmonad
       - dmenu
 

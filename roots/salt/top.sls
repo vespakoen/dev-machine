@@ -1,10 +1,7 @@
 base:
-  '*':
-    - common
-    - xmonad
-    - virtualbox
-    - vagrant
-    - theme
-    - terminal
-    - sublime-text
-    - projects
+  {% for minion, args in pillar.get('minions', {}).items() -%}
+  '{{ minion }}':
+      {%- for state in args %}
+      - {{ state }}
+      {%- endfor %}
+  {% endfor %}
