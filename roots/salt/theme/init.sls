@@ -1,4 +1,6 @@
 include:
   - theme.flatstudio
-  - theme.nitrux-icons
+  - theme.clarity-icons
   - theme.ubuntu-mono-powerline
+  - theme.utilities
+  - theme.gtkrc

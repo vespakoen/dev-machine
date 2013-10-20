@@ -4,5 +4,6 @@ common:
       - python-virtualenv
       - build-essential
       - git-core
+      - git-flow
       - htop
       - zsh

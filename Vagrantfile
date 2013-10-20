@@ -6,7 +6,11 @@ Vagrant.configure("2") do |config|
   config.vm.synced_folder "roots/", "/srv/"
 
   ## Forward 80 to nginx
-  config.vm.network :forwarded_port, guest: 80, host: 80
+  config.vm.network :forwarded_port, guest: 80, host: 8080
+
+  ## Install salt stack
+  config.vm.provision :shell,
+    :inline => 'wget -O - http://bootstrap.saltstack.org | sudo sh'
 
   ## Set your salt configs here
   config.vm.provision :salt do |salt|
@@ -15,6 +19,8 @@ Vagrant.configure("2") do |config|
 
     ## Installs formulas as configured in "roots/salt/top.sls"
     salt.run_highstate = true
+
+    salt.verbose = true
   end
 
   config.vm.provider "virtualbox" do |vb|
@@ -22,7 +28,8 @@ Vagrant.configure("2") do |config|
     vb.customize [
       "modifyvm", :id,
       "--name", "dev-machine",
-      "--memory", 512
+      "--memory", 512,
+      "--vram", 256
     ]
   end
 end
