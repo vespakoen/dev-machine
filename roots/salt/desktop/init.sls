@@ -1,10 +1,10 @@
 desktop:
   pkg.installed:
     - pkgs:
-      - lightdm
-      - xinit
-      - ubuntu-desktop
-      - gnome-shell
+#      - lightdm
+#      - xinit
+#      - ubuntu-desktop
+#      - gnome-shell
       - gnome-terminal
 
 applications:

@@ -19,7 +19,7 @@ myManageHook = composeAll [ manageHook defaultConfig
     , manageDocks
     ]
 
-myLayoutHook = mouseResizableTile { masterFrac = ratio, fracIncrement = delta, nmaster = mynmaster, draggerType = BordersDragger } ||| mouseResizableTileMirrored { masterFrac = ratio, fracIncrement = delta, nmaster = mynmaster, draggerType = BordersDragger } ||| noBorders Full
+myLayoutHook = avoidStruts $ mouseResizableTile { masterFrac = ratio, fracIncrement = delta, nmaster = mynmaster, draggerType = BordersDragger } ||| mouseResizableTileMirrored { masterFrac = ratio, fracIncrement = delta, nmaster = mynmaster, draggerType = BordersDragger } ||| noBorders Full
   where
      -- The default number of windows in the master pane
      mynmaster = 1
@@ -30,12 +30,12 @@ myLayoutHook = mouseResizableTile { masterFrac = ratio, fracIncrement = delta, n
      -- Percent of screen to increment by when resizing panes
      delta   = 3/100
 
-selected   = "'#f4d359'"
-background = "'#313437'"
+selected   = "'{{ pillar['color'] }}'"
+background = "'#363a3b'" --313437
 foreground = "'#ffffff'"
-selectedForeground = "'#313437'"
+selectedForeground = "'#363a3b'" --313437
 -- height matches Ubuntu top Gnome panel
-barHeight = "24"
+barHeight = "30"
 
 appFontXft = "'xft\
                 \:Sans\
@@ -58,24 +58,23 @@ myDmenuTitleBar =
         \ -sb " ++ selected   ++ "\
         \ -sf " ++ selectedForeground   ++ "\
         \ -fn " ++ appFontXft ++ "\
+        \ -l  20
     \`"
 
 
 main = xmonad $ ewmh defaultConfig {
-           layoutHook = myLayoutHook,
-           manageHook = myManageHook,
-           borderWidth = 6,
-           focusFollowsMouse = True,
---           normalBorderColor = "#EBEEF7",
-	   normalBorderColor = "#c0c0c0",
-           focusedBorderColor = "#f4d359"
-        }
-         -- add a screenshot key to the default desktop bindings
-        `additionalKeys` [
-            ((mod1Mask,               xK_i), sendMessage ShrinkSlave) -- %! Shrink a slave area
-            , ((mod1Mask,               xK_o), sendMessage ExpandSlave) -- %! Expand a slave area
-            , ((mod1Mask,               xK_k     ), windows W.focusDown) -- %! Move focus to the next window
-            , ((mod1Mask,               xK_j     ), windows W.focusUp) -- %! Move focus to the previous window
-	    , ((mod1Mask              , xK_p ), spawn myDmenuTitleBar)
-        ]
--- descr <- gets $ description . W.layout . W.workspace . W.current . windows
+       layoutHook = myLayoutHook,
+       manageHook = myManageHook,
+       borderWidth = 6,
+       focusFollowsMouse = True,
+       normalBorderColor = "#363a3b",
+       focusedBorderColor = "{{ pillar['color'] }}"
+    }
+     -- add a screenshot key to the default desktop bindings
+    `additionalKeys` [
+        ((mod1Mask,                 xK_i), sendMessage ShrinkSlave) -- %! Shrink a slave area
+        , ((mod1Mask,               xK_o), sendMessage ExpandSlave) -- %! Expand a slave area
+        , ((mod1Mask,               xK_k    ), windows W.focusDown) -- %! Move focus to the next window
+        , ((mod1Mask,               xK_j    ), windows W.focusUp) -- %! Move focus to the previous window
+        , ((mod1Mask,               xK_p ), spawn myDmenuTitleBar)
+    ]

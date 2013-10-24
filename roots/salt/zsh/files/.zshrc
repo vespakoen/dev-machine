@@ -5,7 +5,7 @@ ZSH=$HOME/.oh-my-zsh
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="robbyrussell"
+ZSH_THEME="steeef"
 
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
@@ -40,7 +40,7 @@ ZSH_THEME="robbyrussell"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git bundler composer copydir copyfile debian extract gem github jump laravel rsync vagrant web-search)
+plugins=(git bundler composer copydir copyfile debian extract gem github git-flow jump laravel rsync vagrant web-search)
 
 source $ZSH/oh-my-zsh.sh
 

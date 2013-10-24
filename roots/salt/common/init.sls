@@ -7,3 +7,8 @@ common:
       - git-flow
       - htop
       - zsh
+      - imagemagick
+      - openssh-server
+      - vlc
+      - wine
+      - tree
