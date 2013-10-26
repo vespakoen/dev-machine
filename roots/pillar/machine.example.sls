@@ -28,7 +28,6 @@ users:
   YOURUSERNAME:
     fullname: Your Name
     shell: /usr/bin/zsh
-    password: somepassword-this-doesnt-work-yet
     groups:
       - YOURUSERNAME
       - adm
