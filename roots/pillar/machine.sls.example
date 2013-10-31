@@ -3,6 +3,8 @@ minions:
     - vespakoen.users
     - vespakoen.system
     - vespakoen.git.deploy_keys
+    - vespakoen.git.config
+    - vespakoen.git.helpers
     - vespakoen.xmonad
     - vespakoen.virtualbox
     - vespakoen.vagrant
@@ -11,25 +13,24 @@ minions:
     - vespakoen.desktop
     - vespakoen.sublime-text
     - vespakoen.projects
-    - vespakoen.macbook
-    - vespakoen.ruby
+    - vespakoen.xfce
 
-username: YOURUSER
+username: YOURUSERNAME
 
 xubuntu: True
 
-color: "F4D359"
-color_r: 244
-color_g: 211
-color_b: 89
+color: "a3a3a3"
+color_r: 163
+color_g: 163
+color_b: 163
 
 port_allow:
   - 22
   - 80
 
 users:
-  YOURUSER:
-    fullname: Your Full Name
+  YOURUSERNAME:
+    fullname: Your Name
     shell: /usr/bin/zsh
     groups:
       - adm
@@ -59,22 +60,22 @@ deploy_keys:
     key: |
       -----BEGIN RSA PRIVATE KEY-----
       lorem ipsum =)
-      -----END RSA PRIVATE KEY-----
+      -----END RSA PRIVATE KEY----
   bitbucket:
     host: bitbucket.org
     key: |
       -----BEGIN RSA PRIVATE KEY-----
       lorem ipsum =)
-      -----END RSA PRIVATE KEY-----
+      -----END RSA PRIVATE KEY----
 
 system:
   timezone: Europe/Amsterdam
   locale: en_US.UTF-8
 
 projects:
-  name-of-project:
-    path: /home/YOURUSER/some/path
-    git: git@bitbucket.org:someuser/name-of-project.git
+  name-of-project-bookmark:
+    path: /path/to/project
+    git: git@repository.org:some/repo.git
 
 zsh:
   theme: steeef
@@ -123,73 +124,3 @@ sublime-text:
       dir: SublimeFileDiffs
       git: https://github.com/colinta/SublimeFileDiffs.git
       rev: st3
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-minions:
-  '*':
-    - common
-    - xmonad
-    - virtualbox
-    - vagrant
-    - theme
-    - zsh
-    #- users
-    - sublime-text
-    - projects
-    - macbook
-
-username: YOURUSERNAME
-
-xubuntu: True
-
-color: "#F4D359"
-color_r: 244
-color_g: 211
-color_b: 89
-
-port_allow:
-  - 22
-  - 80
-
-users:
-  YOURUSERNAME:
-    fullname: Your Name
-    shell: /usr/bin/zsh
-    groups:
-      - YOURUSERNAME
-      - adm
-      - cdrom
-      - sudo
-      - dip
-      - plugdev
-      - lpadmin
-      - sambashare
-
-system:
-  timezone: Europe/Amsterdam
-  locale: en_US.UTF-8
-
-projects:
-  PROJECT-NAME:
-    path: /PATH/TO/PROJECT
-    git: git@bitbucket.org:SOME/PROJECT.git
