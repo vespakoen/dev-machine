@@ -23,3 +23,16 @@ Optimized for 64 bit xubuntu and comes with:
 - Sublime Text (with a bunch of php plugins)
 - ZSH + Oh My ZSH
 - Project manager (Clones from git to a specified location, adds "jump" bookmarks for the console, in file choosers and the file browser)
+
+
+### Testing in VirtualBox
+
+Checkout the bootstrap.sh script
+`bootstrap.sh /path/to/project`
+
+
+### Installing on a machine
+
+Checkout the setup.sh script
+Download xubuntu, put it on a drive / cd, install it and come back to this page.
+Download setup.sh, make it executable and run it
