@@ -3,11 +3,11 @@ My Dev Machine
 
 ### Screenies
 
-![Screenshot 1](http://github.com/Vespakoen/dev-machine/screenshots/1.png)
+![Screenshot 1](https://raw.github.com/Vespakoen/dev-machine/master/screenshots/1.png)
 
-![Screenshot 2](http://github.com/Vespakoen/dev-machine/screenshots/2.png)
+![Screenshot 2](https://raw.github.com/Vespakoen/dev-machine/master/screenshots/2.png)
 
-![Screenshot 3](http://github.com/Vespakoen/dev-machine/screenshots/3.png)
+![Screenshot 3](https://raw.github.com/Vespakoen/dev-machine/master/screenshots/3.png)
 
 Optimized for 64 bit xubuntu and comes with:
 
