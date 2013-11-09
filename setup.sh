@@ -10,7 +10,7 @@ sudo apt-get install git-core curl
 echo "Installing salt"
 curl -L http://bootstrap.saltstack.org | sudo sh -s -- git develop
 
-echo "Make sure the given path exists"
+echo "Making sure the given path exists"
 mkdir -p $base_path
 
 echo "Cloning the salt-master"
