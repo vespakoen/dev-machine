@@ -14,7 +14,7 @@ echo "Making sure the given path exists"
 mkdir -p $base_path
 
 echo "Cloning the salt-master"
-cd $base_path && git clone https://github.com/Vespakoen/dev-machine.git
+cd $base_path && git clone https://github.com/vespakoen/dev-machine.git
 
 echo "Symlinking it into place"
 sudo ln -s "$base_path/dev-machine/roots/salt" /srv/salt
